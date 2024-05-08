@@ -1,0 +1,27 @@
+package com.wangmai.ad.dex.allmodules.bean;
+
+/* JADX WARN: Classes with same name are omitted:
+  C:\Users\35037\Desktop\fankahook\2\class6.dex
+ */
+@Deprecated
+/* loaded from: C:\Users\35037\Desktop\fankahook\2\class6.dex.bak */
+public class ConfigureInfo {
+    private String configurePackName;
+    private String configureUrl;
+
+    public String getConfigurePackName() {
+        return this.configurePackName;
+    }
+
+    public String getConfigureUrl() {
+        return this.configureUrl;
+    }
+
+    public void setConfigurePackName(String str) {
+        this.configurePackName = str;
+    }
+
+    public void setConfigureUrl(String str) {
+        this.configureUrl = str;
+    }
+}

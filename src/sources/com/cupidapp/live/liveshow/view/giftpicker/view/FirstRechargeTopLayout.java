@@ -1,0 +1,119 @@
+package com.cupidapp.live.liveshow.view.giftpicker.view;
+
+import android.content.Context;
+import android.graphics.BitmapFactory;
+import android.util.AttributeSet;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import com.cupidapp.live.R$id;
+import com.cupidapp.live.R$layout;
+import com.cupidapp.live.R$mipmap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.s;
+import kotlin.p;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import z0.u;
+import z0.y;
+import z0.z;
+
+/* compiled from: FirstRechargeTopLayout.kt */
+@kotlin.d
+/* loaded from: C:\Users\35037\Desktop\fankahook\2\class2.dex */
+public final class FirstRechargeTopLayout extends FrameLayout {
+
+    /* renamed from: b, reason: collision with root package name */
+    @Nullable
+    public Function0<p> f15554b;
+
+    /* renamed from: c, reason: collision with root package name */
+    @NotNull
+    public Map<Integer, View> f15555c;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public FirstRechargeTopLayout(@NotNull Context context) {
+        super(context);
+        s.i(context, "context");
+        this.f15555c = new LinkedHashMap();
+        b();
+    }
+
+    @Nullable
+    public View a(int i10) {
+        Map<Integer, View> map = this.f15555c;
+        View view = map.get(Integer.valueOf(i10));
+        if (view != null) {
+            return view;
+        }
+        View findViewById = findViewById(i10);
+        if (findViewById == null) {
+            return null;
+        }
+        map.put(Integer.valueOf(i10), findViewById);
+        return findViewById;
+    }
+
+    public final void b() {
+        z.a(this, R$layout.layout_diamond_first_recharge_top, true);
+        TextView rule_description_textview = (TextView) a(R$id.rule_description_textview);
+        s.h(rule_description_textview, "rule_description_textview");
+        u.a(rule_description_textview);
+        BitmapFactory.Options m10 = z0.f.m(getContext(), R$mipmap.first_recharge_top_bg);
+        int l10 = (m10.outHeight * z0.h.l(this)) / m10.outWidth;
+        ImageView recharge_top_imageview = (ImageView) a(R$id.recharge_top_imageview);
+        s.h(recharge_top_imageview, "recharge_top_imageview");
+        y.o(recharge_top_imageview, null, Integer.valueOf(l10), 1, null);
+        LinearLayout rule_description_layout = (LinearLayout) a(R$id.rule_description_layout);
+        s.h(rule_description_layout, "rule_description_layout");
+        y.d(rule_description_layout, new Function1<View, p>() { // from class: com.cupidapp.live.liveshow.view.giftpicker.view.FirstRechargeTopLayout$initView$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ p invoke(View view) {
+                invoke2(view);
+                return p.f51048a;
+            }
+
+            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            public final void invoke2(@Nullable View view) {
+                Function0<p> checkRuleClick = FirstRechargeTopLayout.this.getCheckRuleClick();
+                if (checkRuleClick != null) {
+                    checkRuleClick.invoke();
+                }
+            }
+        });
+    }
+
+    @Nullable
+    public final Function0<p> getCheckRuleClick() {
+        return this.f15554b;
+    }
+
+    public final void setCheckRuleClick(@Nullable Function0<p> function0) {
+        this.f15554b = function0;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public FirstRechargeTopLayout(@NotNull Context context, @Nullable AttributeSet attributeSet) {
+        super(context, attributeSet);
+        s.i(context, "context");
+        this.f15555c = new LinkedHashMap();
+        b();
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public FirstRechargeTopLayout(@NotNull Context context, @Nullable AttributeSet attributeSet, int i10) {
+        super(context, attributeSet, i10);
+        s.i(context, "context");
+        this.f15555c = new LinkedHashMap();
+        b();
+    }
+}

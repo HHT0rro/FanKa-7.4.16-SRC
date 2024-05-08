@@ -1,0 +1,31 @@
+package com.alibaba.security.common.json.parser;
+
+import java.lang.reflect.Type;
+
+/* loaded from: C:\Users\35037\Desktop\fankahook\2\class7.dex */
+public class ParseContext {
+    public final Object fieldName;
+    public Object object;
+    public final ParseContext parent;
+    private transient String path;
+    public Type type;
+
+    public ParseContext(ParseContext parseContext, Object obj, Object obj2) {
+        this.parent = parseContext;
+        this.object = obj;
+        this.fieldName = obj2;
+    }
+
+    public String toString() {
+        if (this.path == null) {
+            if (this.parent == null) {
+                this.path = "$";
+            } else if (this.fieldName instanceof Integer) {
+                this.path = this.parent.toString() + "[" + this.fieldName + "]";
+            } else {
+                this.path = this.parent.toString() + "." + this.fieldName;
+            }
+        }
+        return this.path;
+    }
+}
